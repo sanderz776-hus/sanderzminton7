@@ -1,3 +1,18 @@
+import express from "express";
+import dotenv from "dotenv";
+import OpenAI from "openai";
+
+dotenv.config();
+const app = express(); // ← ini WAJIB sebelum app.post, app.listen, dll
+
+app.use(express.json());
+
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+
+
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 

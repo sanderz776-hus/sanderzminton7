@@ -1,17 +1,19 @@
-import express from "express";
 import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
 import OpenAI from "openai";
 
 dotenv.config();
-const app = express(); // ← ini WAJIB sebelum app.post, app.listen, dll
 
-app.use(express.json());
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static("public"));
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-
 
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
@@ -19,7 +21,6 @@ app.post("/api/chat", async (req, res) => {
   const SYSTEM_PROMPT = `
   Kamu adalah SmashSanderz, pelatih badminton digital.
   Jawabanmu harus seputar badminton: teknik, latihan, strategi, alat, nutrisi, recovery.
-  Prioritaskan menjawab dengan topik seputar badminton.
   Gunakan bahasa Indonesia yang santai, singkat, dan mudah dipahami pelajar.
   `;
 
@@ -34,38 +35,19 @@ app.post("/api/chat", async (req, res) => {
 
     const reply =
       r?.choices?.[0]?.message?.content?.trim() ||
-      "⚠️ Maaf, belum bisa jawab sekarang.";
+      "⚠️ Maaf, server lagi blank. Coba kirim ulang ya.";
     res.json({ reply });
   } catch (err) {
     console.error("Error OpenAI:", err);
     res.status(500).json({
-      reply: "⚠️ Server lagi sibuk, coba kirim ulang ya.",
+      reply: "⚠️ Server lagi sibuk, coba kirim lagi bentar.",
+      error: err.message,
     });
   }
 });
 
+// ❌ hapus bagian fetch() dan try-catch ganda di bawah
+// ❌ jangan panggil server sendiri
 
-// 👉 Vercel butuh export default, bukan app.listen
-
-
-
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyDZrtFmakoLWLCc1e4F0JqpBeKTHnYinG4",
-  authDomain: "sanderz-minton88.firebaseapp.com",
-  projectId: "sanderz-minton88",
-  storageBucket: "sanderz-minton88.appspot.com",
-  messagingSenderId: "967904982761",
-  appId: "1:967904982761:web:83c95e70a7c385e6066278",
-  measurementId: "G-4HEGZEC9GE"
-};
-
-
-
-
-// ❌ jangan ada app.listen() di bawah
-// ✅ Vercel auto-handle serverless
-//test redep
+// ✅ untuk vercel
 export default app;

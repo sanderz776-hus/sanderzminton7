@@ -42,7 +42,7 @@ app.post("/api/chat", async (req, res) => {
 });
 
 // 👉 Vercel butuh export default, bukan app.listen
-export default app;
+
 
 
 

@@ -56,4 +56,5 @@ fetch("https://sanderzminton771.vercel.app/api/chat", {
 
 // ❌ jangan ada app.listen() di bawah
 // ✅ Vercel auto-handle serverless
+//test redep
 export default app;

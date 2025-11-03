@@ -1,20 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
-
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-import OpenAI from "openai";
-
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
-app.use(express.static("public"));
-
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 
@@ -26,26 +9,26 @@ app.post("/api/chat", async (req, res) => {
   `;
 
   try {
-  const r = await client.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
-      { role: "system", content: SYSTEM_PROMPT },
-      { role: "user", content: message || "halo" },
-    ],
-  });
+    const r = await client.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        { role: "user", content: message || "halo" },
+      ],
+    });
 
-  const reply = r?.choices?.[0]?.message?.content?.trim() || "⚠️ Maaf, belum bisa jawab sekarang.";
-  res.json({ reply });
-} catch (err) {
-  console.error("Error OpenAI:", err);
-  res.json({ reply: "⚠️ Server lagi sibuk, coba kirim ulang ya." });
-}
-
+    const reply =
+      r?.choices?.[0]?.message?.content?.trim() ||
+      "⚠️ Maaf, belum bisa jawab sekarang.";
+    res.json({ reply });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Gagal memanggil API OpenAI" });
+    console.error("Error OpenAI:", err);
+    res.status(500).json({
+      reply: "⚠️ Server lagi sibuk, coba kirim ulang ya.",
+    });
   }
 });
+
 
 // 👉 Vercel butuh export default, bukan app.listen
 
@@ -63,6 +46,13 @@ const firebaseConfig = {
   appId: "1:967904982761:web:83c95e70a7c385e6066278",
   measurementId: "G-4HEGZEC9GE"
 };
+
+fetch("https://sanderzminton771.vercel.app/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message }),
+});
+
 
 // ❌ jangan ada app.listen() di bawah
 // ✅ Vercel auto-handle serverless

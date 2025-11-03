@@ -26,15 +26,21 @@ app.post("/api/chat", async (req, res) => {
   `;
 
   try {
-    const r = await client.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: message },
-      ],
-    });
+  const r = await client.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "system", content: SYSTEM_PROMPT },
+      { role: "user", content: message || "halo" },
+    ],
+  });
 
-    res.status(200).json({ reply: r.choices[0].message.content });
+  const reply = r?.choices?.[0]?.message?.content?.trim() || "⚠️ Maaf, belum bisa jawab sekarang.";
+  res.json({ reply });
+} catch (err) {
+  console.error("Error OpenAI:", err);
+  res.json({ reply: "⚠️ Server lagi sibuk, coba kirim ulang ya." });
+}
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Gagal memanggil API OpenAI" });

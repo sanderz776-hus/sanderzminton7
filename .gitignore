@@ -1,14 +1,2 @@
 node_modules/
 .env
-.vercel
-.DS_Store
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# build output (kalau nanti pakai bundler)
-dist/
-build/
-

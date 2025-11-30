@@ -32,3 +32,5 @@ function addChat(sender, text) {
   chatBox.appendChild(div);
 }
 
+
+

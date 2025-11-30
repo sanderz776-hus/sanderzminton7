@@ -49,4 +49,3 @@ app.post("/api/chat", async (req, res) => {
 
 // ✅ WAJIB UNTUK VERCEL — jangan pake app.listen()
 export default app;
-

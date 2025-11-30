@@ -1,113 +1,24 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" />
   <title>SanderZMinton • Badminton Q&A</title>
   <meta name="description" content="Tanya jawab badminton: teknik, latihan, taktik, alat—dibantu AI." />
-
-  <meta name="theme-color" content="#0b1225">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <style>
-    body{
-      margin:0;font-family:system-ui,Segoe UI,Roboto,Inter,Arial;
-      color:#e5e7eb;
-      background:linear-gradient(120deg,#001f3f,#004080,#007bff);
-      background-size:400% 400%;
-      animationdoctype:shift 8s ease infinite;
-    }
-    @keyframes shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .banner{background:linear-gradient(90deg,#0f172a,#1e293b);text-align:center;padding:10px 0;
-      border-bottom:1px solid #1f2937;box-shadow:0 4px 16px rgba(0,0,0,.4);position:sticky;top:0;z-index:20}
-    .badge-xpplg{background:#22d3ee;color:#0f172a;font-weight:700;padding:4px 14px;border-radius:999px;font-size:14px;margin-right:8px;letter-spacing:.5px}
-    .tagline{color:#a5b4fc;font-size:13px;letter-spacing:.3px}
-    header{padding:22px 16px;border-bottom:1px solid #1f2937;background:linear-gradient(90deg,#151a35,#10162a)}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 14px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 120deg,#22d3ee,#a78bfa)}
-    .title{font-size:22px;margin:0;color:#fff}
-    .sub{margin:4px 0 0;color:#9ca3af;font-size:13px}
-    main{max-width:1180px;margin:18px auto;padding:0 14px;display:grid;gap:16px;grid-template-columns:1.05fr 1fr}
-    .card{background:#111827b8;border:1px solid #1f2937;border-radius:16px;backdrop-filter:blur(6px)}
-    .pad{padding:16px}
-    h2{margin:0 0 10px;font-size:18px;color:#22d3ee}
-    .tips ul{margin:8px 0 0 18px;color:#9ca3af}
-    .hero{display:grid;grid-template-columns:1fr 1.2fr;gap:14px;align-items:center}
-    .hero img{width:100%;border-radius:14px;border:1px solid #1f2937;object-fit:cover;max-height:260px;transition:.4s}
-    .hero img:hover{transform:scale(1.02)}
-    .badge{display:inline-block;background:#0a1328;color:#a7f3d0;border:1px solid #113;
-      padding:4px 10px;border-radius:999px;font-size:12px;margin-left:8px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .chip{background:#0e182e;border:1px solid #1f2937;color:#9ca3af;
-      padding:6px 10px;border-radius:999px;font-size:12px;cursor:pointer;transition:.2s}
-    .chip:hover{color:#fff;border-color:#2b3648;transform:translateY(-2px);box-shadow:0 6px 16px rgba(34,211,238,.12)}
-    .chat{display:flex;flex-direction:column;height:560px}
-    .log{flex:1;overflow:auto;border-top-left-radius:16px;border-top-right-radius:16px;
-      padding:14px 14px 4px;background:linear-gradient(180deg,#0f172a,#0c1326)}
-    .row{display:flex;gap:8px;border-top:1px solid #1f2937;padding:10px;background:#0b1223;
-      border-bottom-left-radius:16px;border-bottom-right-radius:16px}
-    textarea{flex:1;min-height:56px;max-height:160px;resize:vertical;border-radius:12px;
-      background:#091125;color:#e5e7eb;border:1px solid #1f2937;padding:10px}
-    button{border:1px solid #1f2937;background:#0e162b;color:#e5e7eb;border-radius:12px;
-      padding:10px 14px;cursor:pointer;transition:.25s}
-    button:hover{filter:brightness(1.3);transform:scale(1.03)}
-    .msg{margin:8px 0;display:flex;gap:10px;animation:fadeIn .25s ease-out}
-    .bubble{max-width:78%;padding:10px 12px;border-radius:14px;border:1px solid #1f2937;white-space:pre-wrap}
-    .you .bubble{background:#0a1530;color:#dbeafe;border-color:#17345e}
-    .ai .bubble{background:#0f1f2f;color:#d1fae5;border-color:#1c3b3b;position:relative;padding-left:46px}
-    .ai .bubble::before{
-      content:"";position:absolute;left:10px;top:10px;width:28px;height:28px;
-      border-radius:50%;background:url('https://awsimages.detik.net.id/community/media/visual/2023/03/25/anthony-sinisuka-ginting_169.jpeg?w=700&q=90') center/cover no-repeat;border:1px solid #1f2937
-    }
-    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-    .typing{font-size:12px;color:#9ca3af;display:flex;align-items:center;gap:6px}
-    .dots{display:inline-flex;gap:3px}
-    .dots i{width:6px;height:6px;background:#9ca3af;border-radius:999px;opacity:.5;animation:bounce 1.2s infinite}
-    .dots i:nth-child(2){animation-delay:.2s}
-    .dots i:nth-child(3){animation-delay:.4s}
-
-    /* 🌙 Scrollbar custom (dark mode) */
-#rekapPanelSM::-webkit-scrollbar {
-  width: 8px;
-}
-#rekapPanelSM::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1e293b, #334155);
-  border-radius: 10px;
-}
-#rekapPanelSM::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #22d3ee, #6366f1);
-}
-#rekapPanelSM::-webkit-scrollbar-track {
-  background: #0a0f1e;
-}
-
-
-    @keyframes bounce{0%,80%,100%{transform:translateY(0);opacity:.5}40%{transform:translateY(-4px);opacity:1}}
-    .footer{color:#9ca3af;font-size:12px;text-align:center;margin:10px 0}
-    @media(max-width:980px){main{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.chat{height:520px}}
-
-    .me {
-  justify-content:flex-end;
-}
-.me .bubble {
-  background:#0a1530;<!
-  color:#dbeafe;
-  border-color:#17345e;
-  align-self:flex-end;
-  text-align:right;
-}
-.ai {
-  justify-content:flex-start;
-}
-
-  </style>
+  <meta name="theme-color" content="#0b1225" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Banner -->
   <div class="banner">
     <span class="badge-xpplg">X PPLG 2</span>
     <span class="tagline">Rekayasa Perangkat Lunak | SMK TI Muhammadiyah Cikampek</span>
   </div>
+
+  <!-- Header -->
   <header>
     <div class="wrap">
       <div class="brand">
@@ -119,7 +30,10 @@
       </div>
     </div>
   </header>
+
+  <!-- Main Content -->
   <main>
+    <!-- Hero Section -->
     <section class="card pad">
       <div class="hero">
         <img src="https://awsimages.detik.net.id/community/media/visual/2023/03/25/anthony-sinisuka-ginting_169.jpeg?w=700&q=90" alt="Anthony Ginting">
@@ -146,6 +60,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Chat Section -->
     <section class="card chat">
       <div id="log" class="log"></div>
       <div id="typing" class="pad typing" style="display:none">
@@ -157,748 +73,61 @@
         <button id="clear" title="Bersihkan chat">Bersih</button>
       </div>
     </section>
-
-
-
-    <!-- 🔐 MODAL LOGIN / REGISTER (NEON TECH) -->
-<div id="authModal" style="
-  position:fixed;inset:0;display:none;align-items:center;justify-content:center;
-  background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);z-index:999;">
-  <div style="
-    background:linear-gradient(145deg,#0a0f24 20%,#101b3a 80%);
-    border:1px solid rgba(34,211,238,.2);
-    box-shadow:0 0 20px rgba(34,211,238,.2);
-    border-radius:18px;padding:30px 26px;width:320px;text-align:center;">
-    
-    <h2 style="color:#22d3ee;font-weight:600;margin-bottom:10px;">⚡ Akses Akun</h2>
-    <p id="authMode" style="color:#a5b4fc;font-size:13px;margin-bottom:18px;">Login ke akunmu</p>
-
-    <input id="authEmail" type="email" placeholder="Email" 
-      style="width:100%;padding:10px 12px;margin:6px 0;background:#0a1530;
-      color:#e5e7eb;border:1px solid #1f2937;border-radius:10px;font-size:14px;">
-    <input id="authPass" type="password" placeholder="Password" 
-      style="width:100%;padding:10px 12px;margin:6px 0;background:#0a1530;
-      color:#e5e7eb;border:1px solid #1f2937;border-radius:10px;font-size:14px;">
-
-    <button id="authAction" style="
-      width:100%;margin-top:10px;padding:10px;border:none;
-      border-radius:10px;background:linear-gradient(90deg,#22d3ee,#a78bfa);
-      color:#0f172a;font-weight:600;cursor:pointer;transition:.3s;">
-      Login
-    </button>
-
-    <p style="color:#9ca3af;font-size:13px;margin-top:12px;">
-      <span id="toggleMode" style="color:#22d3ee;cursor:pointer;">Belum punya akun?</span>
-    </p>
-
-    <button id="closeAuth" style="margin-top:6px;background:none;border:none;color:#9ca3af;cursor:pointer;font-size:13px;">
-      Tutup
-    </button>
-  </div>
-</div>
-
-<!-- 👤 TOMBOL AKUN DI POJOK -->
-<button id="openAuth" style="
-  position:fixed;top:16px;right:16px;padding:8px 12px;
-  background:linear-gradient(90deg,#0a1530,#101b3a);
-  border:1px solid #1f2937;border-radius:10px;color:#22d3ee;
-  cursor:pointer;font-size:14px;z-index:30;">
-  👤 Akun
-</button>
-
-
-
   </main>
-  <div class="footer">Note: pakai akal sehat & progres bertahap. Cedera itu mahal.</div>
-  <script>
-    const log=document.getElementById('log'),msg=document.getElementById('msg'),
-    sendBtn=document.getElementById('send'),clearBtn=document.getElementById('clear'),
-    typing=document.getElementById('typing'),chips=document.querySelectorAll('.chip');
-    const history=[];
-    function push(role,text){const wrap=document.createElement('div');wrap.className='msg '+(role==='user'?'me':'ai');
-      const bubble=document.createElement('div');bubble.className='bubble';bubble.innerText=text;
-      wrap.appendChild(bubble);log.appendChild(wrap);log.scrollTop=log.scrollHeight;}
-    function setTyping(on){typing.style.display=on?'block':'none';}
-    async function send(){
-      const text=msg.value.trim();if(!text)return;
-      push('user',text);history.push({role:'user',content:text});
-      msg.value='';msg.focus();sendBtn.disabled=true;setTyping(true);
-      try{
-        const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({message:text,history})});
-        const data=await r.json();const reply=data.reply||'Maaf, lagi blank.';
-        push('assistant',reply);history.push({role:'assistant',content:reply});
-      }catch(e){push('assistant','⚠️ Koneksi error. Coba lagi.');}
-      finally{setTyping(false);sendBtn.disabled=false;}
-    }
-    sendBtn.addEventListener('click',send);
-    clearBtn.addEventListener('click',()=>{history.length=0;log.innerHTML='';});
-    msg.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}});
-    chips.forEach(c=>c.addEventListener('click',()=>{msg.value=c.dataset.q;msg.focus();}));
-    setTimeout(()=>{push('assistant','Halo! Tanyain teknik atau latihan yang kamu mau. Contoh: "Bang, program 3x/minggu buat ningkatin smash & footwork dong."');},200);
-  </script>
 
-
-
-
-
-  <script>
-// 🌈 Efek kursor neon interaktif
-const cursor = document.createElement('div');
-cursor.style.cssText = `
-  position:fixed;width:14px;height:14px;border-radius:50%;
-  background:#22d3ee;pointer-events:none;z-index:9999;
-  box-shadow:0 0 10px #22d3ee, 0 0 25px #a78bfa;
-  transition:transform .08s ease-out;
-`;
-document.body.appendChild(cursor);
-window.addEventListener('mousemove', e=>{
-  cursor.style.transform = `translate(${e.clientX-7}px,${e.clientY-7}px)`;
-});
-
-// 💬 Notifikasi motivasi acak tiap 30 detik
-const quotes = [
-  "🔥 Fokus bukan berarti keras kepala, tapi konsisten.",
-  "💪 Power itu hasil dari teknik + sabar latihan.",
-  "🏸 Jangan buru-buru menang, buru-buru belajar.",
-  "🎯 Smash kencang nggak akan berguna tanpa kontrol.",
-  "🧠 Ingat: otak tenang, tangan tepat."
-];
-setInterval(()=>{
-  const q = quotes[Math.floor(Math.random()*quotes.length)];
-  const toast = document.createElement('div');
-  toast.textContent = q;
-  toast.style.cssText = `
-    position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-    background:linear-gradient(90deg,#0a1530,#101b3a);
-    color:#22d3ee;padding:10px 16px;border-radius:12px;
-    border:1px solid #1f2937;font-size:13px;opacity:0;transition:all .5s;
-    box-shadow:0 0 10px rgba(34,211,238,.4);z-index:999;
-  `;
-  document.body.appendChild(toast);
-  setTimeout(()=>toast.style.opacity=1,50);
-  setTimeout(()=>{toast.style.opacity=0;setTimeout(()=>toast.remove(),500)},4000);
-}, 8000);
-
-// 🚀 Efek partikel ringan saat klik
-document.addEventListener('click', e=>{
-  for(let i=0;i<6;i++){
-    const p=document.createElement('div');
-    p.style.cssText=`
-      position:fixed;width:6px;height:6px;border-radius:50%;
-      background:${['#22d3ee','#a78bfa','#60a5fa'][Math.floor(Math.random()*3)]};
-      left:${e.clientX}px;top:${e.clientY}px;pointer-events:none;
-      opacity:1;z-index:999;transform:scale(1);
-      transition:all .7s cubic-bezier(.22,1,.36,1);
-    `;
-    document.body.appendChild(p);
-    setTimeout(()=>{
-      p.style.opacity=0;
-      p.style.transform=`translate(${(Math.random()-0.5)*120}px,${(Math.random()-0.5)*120}px) scale(0)`;
-    },10);
-    setTimeout(()=>p.remove(),700);
-  }
-});
-
-
-</script>
-
-
-<script>
-// 🌟 Efek neon menyala pada teks X PPLG 2
-const neonText = document.querySelector('.badge-xpplg');
-if (neonText) {
-  neonText.style.position = 'relative';
-  neonText.style.textShadow = `
-    0 0 6px #22d3ee,
-    0 0 12px #22d3ee,
-    0 0 24px #22d3ee,
-    0 0 48px #0ff
-  `;
-  neonText.style.transition = 'all .3s ease';
-  
-  // animasi berdenyut pelan
-  setInterval(()=>{
-    neonText.style.textShadow = `
-      0 0 ${6+Math.random()*6}px #22d3ee,
-      0 0 ${12+Math.random()*8}px #22d3ee,
-      0 0 ${24+Math.random()*10}px #22d3ee,
-      0 0 ${48+Math.random()*14}px #0ff
-    `;
-  }, 500);
-
-  // efek saat hover
-  neonText.addEventListener('mouseenter', ()=>{
-    neonText.style.textShadow = `
-      0 0 10px #a78bfa,
-      0 0 24px #a78bfa,
-      0 0 48px #22d3ee
-    `;
-    neonText.style.transform = 'scale(1.1)';
-  });
-  neonText.addEventListener('mouseleave', ()=>{
-    neonText.style.transform = 'scale(1)';
-  });
-}
-</script>
-
-
-<!-- ============================================================= -->
-<!-- 🔥 FINAL: Firebase Auth + Firestore Rekap Olahraga (ONLINE)  -->
-<!--    - Proteksi login                                           -->
-<!--    - Data per akun (users/{uid}/rekapOlahraga/data)           -->
-<!--    - Chart, progress bar, dropdown olahraga                   -->
-<!--    - Toast notifikasi elegan (ganti alert())                  -->
-<!-- ============================================================= -->
-
-<!-- Chart.js untuk donut chart -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script type="module">
-/* ==========================
-   0) IMPORT & INIT FIREBASE
-   ========================== */
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-import { 
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
-  signOut, onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
-import {
-  getFirestore, doc, getDoc, setDoc, onSnapshot, serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
-
-/* 👉 GUNAKAN CONFIG PUNYAMU YANG SUDAH ADA */
-const firebaseConfig = {
-  apiKey: "AIzaSyDZrtFmakoLWLCc1e4F0JqpBeKTHnYinG4",
-  authDomain: "sanderz-minton88.firebaseapp.com",
-  projectId: "sanderz-minton88",
-  storageBucket: "sanderz-minton88.appspot.com",
-  messagingSenderId: "967904982761",
-  appId: "1:967904982761:web:83c95e70a7c385e6066278",
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db   = getFirestore(app);
-
-/* ==========================
-   1) TOAST (ganti alert())
-   ========================== */
-function toast(msg, emoji="⚡") {
-  const old = document.querySelector('.toast-alert');
-  if (old) old.remove();
-  const host = document.createElement('div');
-  host.className = 'toast-alert';
-  host.style.cssText = `
-    position:fixed;left:50%;bottom:28px;transform:translateX(-50%);
-    z-index:99999;animation:fadeIn .25s ease;
-  `;
-  host.innerHTML = `
-    <div style="
-      padding:12px 16px;border-radius:14px;
-      background:linear-gradient(135deg,#0a1530,#101b3a);
-      border:1px solid rgba(34,211,238,.25);
-      color:#e5e7eb;display:flex;gap:10px;align-items:center;
-      box-shadow:0 0 16px rgba(34,211,238,.25);backdrop-filter:blur(8px);
-      font:500 14px system-ui,Segoe UI,Roboto;
-      max-width:92vw;white-space:pre-wrap
-    ">
-      <span style="font-size:18px">${emoji}</span>
-      <span>${msg}</span>
-    </div>
-  `;
-  document.body.appendChild(host);
-  setTimeout(()=>{
-    host.style.transition='opacity .35s ease';
-    host.style.opacity='0';
-    setTimeout(()=>host.remove(),350);
-  }, 3200);
-}
-window.alert = (m)=>toast(m);
-
-/* ==========================
-   2) LOGIN / REGISTER UI
-   (pakai modal yang SUDAH ADA di HTML kamu)
-   ========================== */
-const modal      = document.getElementById('authModal');
-const openBtn    = document.getElementById('openAuth');
-const closeBtn   = document.getElementById('closeAuth');
-const toggleBtn  = document.getElementById('toggleMode');
-const modeText   = document.getElementById('authMode');
-const actionBtn  = document.getElementById('authAction');
-const emailInput = document.getElementById('authEmail');
-const passInput  = document.getElementById('authPass');
-
-let isLogin = true;
-openBtn.onclick  = ()=> modal.style.display='flex';
-closeBtn.onclick = ()=> modal.style.display='none';
-toggleBtn.onclick = ()=>{
-  isLogin = !isLogin;
-  modeText.textContent = isLogin ? "Login ke akunmu" : "Buat akun baru";
-  actionBtn.textContent = isLogin ? "Login" : "Daftar";
-  toggleBtn.textContent = isLogin ? "Belum punya akun?" : "Sudah punya akun?";
-};
-
-actionBtn.onclick = async ()=>{
-  const email = emailInput.value.trim();
-  const pass  = passInput.value.trim();
-  if(!email || !pass) return toast("Isi email dan password dulu ya.", "⚠️");
-
-  try{
-    if(isLogin){
-      await signInWithEmailAndPassword(auth, email, pass);
-      toast("Login sukses!","✅");
-    }else{
-      await createUserWithEmailAndPassword(auth, email, pass);
-      toast("Akun berhasil dibuat!","🎉");
-    }
-    modal.style.display='none';
-  }catch(err){
-    toast(err.message || "Gagal. Cek data kamu.", "⚠️");
-  }
-};
-
-// Update label tombol akun saat status berubah
-onAuthStateChanged(auth, user => {
-  const existingMenu = document.getElementById('userMenu');
-  if (existingMenu) existingMenu.remove();
-
-  if (user) {
-    // ubah tombol akun jadi ikon ☰
-    openBtn.textContent = '☰';
-    openBtn.style.fontSize = '20px';
-    openBtn.style.color = '#22d3ee';
-
-    // buat panel profil rapi di kanan atas
-    const menu = document.createElement('div');
-    menu.id = 'userMenu';
-    menu.style.cssText = `
-      position:fixed;top:55px;right:16px;z-index:50;
-      background:rgba(10,15,35,0.97);
-      border:1px solid rgba(34,211,238,.3);
-      border-radius:14px;padding:14px 16px;
-      width:230px;box-shadow:0 0 20px rgba(34,211,238,.25);
-      color:#e5e7eb;font-family:system-ui;display:none;
-      animation:fadeIn .3s ease;
-    `;
-
-    const displayName = user.displayName || user.email.split('@')[0];
-    const email = user.email;
-
-    menu.innerHTML = `
-      <p style="margin:0;font-weight:600;color:#22d3ee;font-size:15px;">${displayName}</p>
-      <p style="margin:4px 0 10px;color:#9ca3af;font-size:13px;">${email}</p>
-      <hr style="border-color:rgba(34,211,238,.2);margin:6px 0;">
-      <button id="changePassBtn" style="width:100%;margin-top:6px;
-        background:#0a1530;border:1px solid #1f2937;
-        color:#a5b4fc;border-radius:8px;padding:6px;cursor:pointer;">Ganti Password</button>
-      <button id="forgotPassBtn" style="width:100%;margin-top:6px;
-        background:#0a1530;border:1px solid #1f2937;
-        color:#a5b4fc;border-radius:8px;padding:6px;cursor:pointer;">Lupa Password</button>
-    `;
-    document.body.appendChild(menu);
-
-    openBtn.onclick = () => {
-      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-    };
-
-    document.getElementById('changePassBtn').onclick = async () => {
-      const newPass = prompt("Masukkan password baru:");
-      if (!newPass) return toast("Password baru tidak boleh kosong.","⚠️");
-      try {
-        await user.updatePassword(newPass);
-        toast("Password berhasil diganti!","✅");
-      } catch (err) {
-        toast("Gagal ganti password: "+err.message,"⚠️");
-      }
-    };
-
-    document.getElementById('forgotPassBtn').onclick = async () => {
-      try {
-        await sendPasswordResetEmail(auth, user.email);
-        toast("Link reset password dikirim ke email kamu.","📩");
-      } catch (err) {
-        toast("Gagal kirim email: "+err.message,"⚠️");
-      }
-    };
-  } else {
-    openBtn.textContent = '👤 Akun';
-  }
-});
-
-
-
-/* ==========================
-   🔒 LOGOUT & LUPA PASSWORD
-   ========================== */
-import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
-
-
-  // tampilkan tombol saat user login
-  onAuthStateChanged(auth, user => {
-  const existingMenu = document.getElementById('userMenu');
-  if (existingMenu) existingMenu.remove();
-
-  if (user) {
-    openBtn.textContent = '☰';
-    openBtn.style.fontSize = '20px';
-    openBtn.style.color = '#22d3ee';
-
-    const menu = document.createElement('div');
-    menu.id = 'userMenu';
-    menu.style.cssText = `
-      position:fixed;top:55px;right:16px;z-index:1000;
-      background:rgba(10,15,35,0.97);
-      border:1px solid rgba(34,211,238,.3);
-      border-radius:14px;padding:14px 16px;
-      width:230px;box-shadow:0 0 20px rgba(34,211,238,.25);
-      color:#e5e7eb;font-family:system-ui;display:none;
-      animation:fadeIn .3s ease;
-    `;
-
-    const displayName = user.displayName || user.email.split('@')[0];
-    const email = user.email;
-
-    menu.innerHTML = `
-      <p style="margin:0;font-weight:600;color:#22d3ee;font-size:15px;">${displayName}</p>
-      <p style="margin:4px 0 10px;color:#9ca3af;font-size:13px;">${email}</p>
-      <hr style="border-color:rgba(34,211,238,.2);margin:6px 0;">
-      <button id="changePassBtn" style="
-        width:100%;margin-top:6px;
-        background:#0a1530;border:1px solid #1f2937;
-        color:#a5b4fc;border-radius:8px;padding:6px;cursor:pointer;">Ganti Password</button>
-      <button id="forgotPassBtn" style="
-        width:100%;margin-top:6px;
-        background:#0a1530;border:1px solid #1f2937;
-        color:#a5b4fc;border-radius:8px;padding:6px;cursor:pointer;">Lupa Password</button>
-      <button id="logoutBtn" style="
-        width:100%;margin-top:10px;
-        background:linear-gradient(90deg,#3b0a0a,#7f1d1d);
-        border:1px solid #7f1d1d;border-radius:8px;
-        color:#fca5a5;cursor:pointer;padding:6px;">Logout</button>
-    `;
-    document.body.appendChild(menu);
-
-    openBtn.onclick = () => {
-      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-    };
-
-    document.getElementById('logoutBtn').onclick = async () => {
-      await signOut(auth);
-      toast("👋 Logout berhasil!");
-      menu.remove();
-    };
-
-    document.getElementById('changePassBtn').onclick = async () => {
-      const newPass = prompt("Masukkan password baru:");
-      if (!newPass) return toast("Password baru tidak boleh kosong.","⚠️");
-      try {
-        await user.updatePassword(newPass);
-        toast("Password berhasil diganti!","✅");
-      } catch (err) {
-        toast("Gagal ganti password: "+err.message,"⚠️");
-      }
-    };
-
-    document.getElementById('forgotPassBtn').onclick = async () => {
-      try {
-        await sendPasswordResetEmail(auth, user.email);
-        toast("Link reset password dikirim ke email kamu.","📩");
-      } catch (err) {
-        toast("Gagal kirim email: "+err.message,"⚠️");
-      }
-    };
-  } else {
-    openBtn.textContent = '👤 Akun';
-  }
-});
-
-
-// tombol lupa password di modal
-const forgotBtn = document.createElement('p');
-forgotBtn.textContent = "Lupa password?";
-forgotBtn.style.cssText = "color:#22d3ee;font-size:13px;margin-top:6px;cursor:pointer;";
-document.querySelector("#authModal div").appendChild(forgotBtn);
-
-forgotBtn.onclick = async ()=>{
-  const email = emailInput.value.trim();
-  if(!email) return toast("Masukkan email dulu untuk reset password.","⚠️");
-  try{
-    await sendPasswordResetEmail(auth,email);
-    toast("Link reset password sudah dikirim ke email kamu.","📩");
-  }catch(err){
-    toast("Gagal kirim email: "+err.message,"⚠️");
-  }
-};
-
-
-
-
-/* ==========================
-   3) REKAP OLAHRAGA (ONLINE)
-   - Tombol pojok kanan bawah
-   - Panel transparan
-   - Proteksi: wajib login
-   - Data per akun (Firestore)
-   ========================== */
-
-// ——— tombol rekap (hindari dobel)
-if (!document.getElementById('rekapBtnSM')) {
-  const btn=document.createElement('button');
-  btn.id='rekapBtnSM';
-  btn.textContent='📈 Rekap Olahraga';
-  btn.style.cssText=`
-    position:fixed;bottom:22px;right:22px;z-index:9999;
-    background:linear-gradient(135deg,#22d3ee,#6366f1);
-    color:#0f172a;font-weight:700;border:none;border-radius:14px;
-    padding:12px 16px;cursor:pointer;letter-spacing:.3px;
-    box-shadow:0 0 25px rgba(34,211,238,.4);transition:.3s;
-  `;
-  btn.onmouseenter=()=>btn.style.transform='scale(1.07)';
-  btn.onmouseleave=()=>btn.style.transform='scale(1)';
-  document.body.appendChild(btn);
-
-  // panel
-  const panel=document.createElement('div');
-  panel.id='rekapPanelSM';
-  panel.style.cssText=`
+  <!-- Modal Login / Register -->
+  <div id="authModal" style="
     position:fixed;inset:0;display:none;align-items:center;justify-content:center;
-    background:rgba(0,0,0,.65);backdrop-filter:blur(10px);z-index:10000;
-  `;
-  panel.innerHTML=`
+    background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);z-index:999;">
     <div style="
-      background:linear-gradient(145deg,#0b1225 20%,#111c33 80%);
-      border:1px solid rgba(34,211,238,.25);
-      border-radius:24px;padding:30px 26px;width:380px;max-height:85vh;overflow:auto;
-      box-shadow:0 0 30px rgba(34,211,238,.25);color:#e5e7eb;font-family:system-ui;
-      animation:fadeIn .4s ease-out;
-    ">
-      <h2 style="margin-top:0;color:#22d3ee;text-align:center;font-size:21px;">🏸 Dashboard Latihan</h2>
+      background:linear-gradient(145deg,#0a0f24 20%,#101b3a 80%);
+      border:1px solid rgba(34,211,238,.2);
+      box-shadow:0 0 20px rgba(34,211,238,.2);
+      border-radius:18px;padding:30px 26px;width:320px;text-align:center;">
+      <h2 style="color:#22d3ee;font-weight:600;margin-bottom:10px;">⚡ Akses Akun</h2>
+      <p id="authMode" style="color:#a5b4fc;font-size:13px;margin:16px 0 20px;">Login ke akunmu</p>
 
-      <div id="progressWrap" style="margin:14px 0 18px;">
-        <p style="font-size:13px;color:#a5b4fc;margin-bottom:6px;text-align:center;">Progress Mingguan</p>
-        <div style="width:100%;height:10px;background:#0a1530;border-radius:999px;overflow:hidden;">
-          <div id="progressBar" style="height:100%;width:0%;
-            background:linear-gradient(90deg,#22d3ee,#818cf8);
-            box-shadow:0 0 14px rgba(34,211,238,.6);transition:width .6s ease;">
-          </div>
-        </div>
-        <p id="progressText" style="font-size:12px;text-align:center;margin-top:6px;color:#9ca3af"></p>
-      </div>
+      <input id="authEmail" type="email" placeholder="Email" 
+        style="width:100%;padding:10px 12px;margin:6px 0;background:#0a1530;
+        color:#e5e7eb;border:1px solid #1f2937;border-radius:10px;font-size:14px;">
+      <input id="authPass" type="password" placeholder="Password" 
+        style="width:100%;padding:10px 12px;margin:6px 0;background:#0a1530;
+        color:#e5e7eb;border:1px solid #1f2937;border-radius:10px;font-size:14px;">
 
-      <canvas id="rekapChart" width="320" height="320" style="margin:auto;display:block;"></canvas>
-      <div id="rekapList" style="font-size:14px;margin-top:14px;"></div>
+      <button id="authAction" style="
+        width:100%;margin-top:10px;padding:10px;border:none;
+        border-radius:10px;background:linear-gradient(90deg,#22d3ee,#a78bfa);
+        color:#0f172a;font-weight:600;cursor:pointer;transition:.3s;">
+        Login
+      </button>
 
-      <div style="margin-top:18px;text-align:center;">
-        <select id="kegiatan" style="width:90%;margin-bottom:6px;padding:8px;border-radius:10px;border:none;background:#0a1530;color:#e5e7eb;">
-          <option value="">Pilih olahraga...</option>
-          <option>Badminton</option><option>Gym</option><option>Lari</option>
-          <option>Bersepeda</option><option>Renang</option><option>Futsal</option>
-          <option>Calisthenics</option><option>Workout Rumah</option>
-        </select>
-        <input id="durasi" type="number" placeholder="Durasi (menit)" style="width:90%;margin-bottom:10px;padding:8px;border-radius:10px;border:none;background:#0a1530;color:#e5e7eb">
-        <button id="tambahRekap" style="background:linear-gradient(90deg,#22d3ee,#818cf8);color:#0f172a;border:none;padding:8px 14px;border-radius:10px;font-weight:600;cursor:pointer;">Tambah</button>
-      </div>
+      <p style="color:#9ca3af;font-size:13px;margin-top:12px;">
+        <span id="toggleMode" style="color:#22d3ee;cursor:pointer;">Belum punya akun?</span>
+      </p>
 
-      <p id="totalDurasi" style="margin-top:16px;color:#a5b4fc;font-size:13px;text-align:center;"></p>
-      <div style="text-align:center;margin-top:8px;">
-        <button id="closeRekap" style="background:none;border:none;color:#9ca3af;cursor:pointer;font-size:13px;">Tutup</button>
-      </div>
+      <button id="closeAuth" style="margin-top:6px;background:none;border:none;color:#9ca3af;cursor:pointer;font-size:13px;">
+        Tutup
+      </button>
     </div>
-    <style>
-      @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-      /* 🌙 Scrollbar custom (dark mode) */
-#rekapPanelSM::-webkit-scrollbar {
-  width: 8px;
-}
-#rekapPanelSM::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1e293b, #334155);
-  border-radius: 10px;
-}
-#rekapPanelSM::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #22d3ee, #6366f1);
-}
-#rekapPanelSM::-webkit-scrollbar-track {
-  background: #0a0f1e;
-}
+  </div>
 
-#rekapPanelSM {
-  scrollbar-width: thin;
-  scrollbar-color: #334155 #0a0f1e; /* Firefox */
-}
+  <!-- Tombol Akun -->
+  <button id="openAuth" style="
+    position:fixed;top:16px;right:16px;padding:8px 12px;
+    background:linear-gradient(90deg,#0a1530,#101b3a);
+    border:1px solid #1f2937;border-radius:10px;color:#22d3ee;
+    cursor:pointer;font-size:14px;z-index:30;">
+    👤 Akun
+  </button>
 
-    </style>
-  `;
-  document.body.appendChild(panel);
+  <!-- Footer -->
+  <div class="footer">Note: pakai akal sehat & progres bertahap. Cedera itu mahal.</div>
 
-  // elemen panel
-  const rekapList      = panel.querySelector('#rekapList');
-  const totalDurasi    = panel.querySelector('#totalDurasi');
-  const selectKegiatan = panel.querySelector('#kegiatan');
-  const inputDurasi    = panel.querySelector('#durasi');
-  const tambahBtn      = panel.querySelector('#tambahRekap');
-  const closeBtn       = panel.querySelector('#closeRekap');
-  const progressBar    = panel.querySelector('#progressBar');
-  const progressText   = panel.querySelector('#progressText');
-
-  // Firestore helpers
-  const userDoc = (uid)=> doc(db, "users", uid, "rekapOlahraga", "data");
-
-  async function ensureDoc(uid){
-    const snap = await getDoc(userDoc(uid));
-    if(!snap.exists()){
-      await setDoc(userDoc(uid), { items: [], updated: serverTimestamp() });
-    }
-  }
-
-  function subscribeItems(uid, onData){
-    return onSnapshot(userDoc(uid), (snap)=>{
-      const items = snap.exists() ? (snap.data().items || []) : [];
-      onData(items);
-    });
-  }
-
-  async function addItem(uid, nama, menit){
-    const ref = userDoc(uid);
-    const snap = await getDoc(ref);
-    const items = snap.exists() ? (snap.data().items || []) : [];
-    items.push({ nama, menit, ts: Date.now() });
-    await setDoc(ref, { items, updated: serverTimestamp() });
-  }
-
-  async function removeItem(uid, index){
-    const ref = userDoc(uid);
-    const snap = await getDoc(ref);
-    if(!snap.exists()) return;
-    const items = snap.data().items || [];
-    items.splice(index,1);
-    await setDoc(ref, { items, updated: serverTimestamp() });
-  }
-
-  // Chart + progress
-  const TARGET = 300; // menit / minggu
-  let chart;
-
-  function renderProgress(total){
-    const pct = Math.min((total / TARGET) * 100, 100);
-    progressBar.style.width = pct + '%';
-    progressText.textContent = `${total}/${TARGET} menit (${Math.floor(pct)}%)`;
-    if(pct >= 100){
-      progressText.innerHTML = `🔥 Target tercapai! (${total} menit)`;
-      progressBar.style.background = 'linear-gradient(90deg,#34d399,#22d3ee)';
-      progressBar.style.boxShadow  = '0 0 16px rgba(34,211,238,.8)';
-    } else {
-      progressBar.style.background = 'linear-gradient(90deg,#22d3ee,#818cf8)';
-      progressBar.style.boxShadow  = '0 0 14px rgba(34,211,238,.6)';
-    }
-  }
-
-  function renderChart(data){
-    const ctx = document.getElementById('rekapChart');
-    if(chart) chart.destroy();
-    if(data.length === 0){
-      const g = ctx.getContext('2d');
-      g.clearRect(0,0,ctx.width,ctx.height);
-      g.fillStyle="#9ca3af"; g.font="14px system-ui";
-      g.fillText("Belum ada data...", 100, 150);
-      return;
-    }
-    const labels = data.map(d=>d.nama);
-    const values = data.map(d=>d.menit);
-    const colors = ['#22d3ee','#818cf8','#34d399','#facc15','#fb7185','#a78bfa','#0ea5e9','#4ade80'];
-    chart = new Chart(ctx,{
-      type:'doughnut',
-      data:{ labels, datasets:[{ data: values, backgroundColor: colors, borderColor:'#0b1225', borderWidth:2, hoverOffset:10 }]},
-      options:{
-        plugins:{
-          legend:{ labels:{ color:'#e5e7eb', font:{ size:12 }}},
-          tooltip:{ backgroundColor:'#0b1225', titleColor:'#22d3ee', bodyColor:'#e5e7eb' }
-        },
-        cutout:'55%',
-        animation:{ animateRotate:true, duration:900, easing:'easeOutQuart' }
-      }
-    });
-  }
-
-  function renderList(data){
-    rekapList.innerHTML = data.length
-      ? data.map((r,i)=>`
-          <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-            <span>${i+1}. ${r.nama} <span style="color:#22d3ee">(${r.menit} mnt)</span></span>
-            <button data-i="${i}" style="background:none;border:none;color:#ef4444;cursor:pointer;font-size:13px;">✕</button>
-          </div>
-        `).join('')
-      : '<p style="color:#9ca3af;text-align:center;">Belum ada data latihan.</p>';
-    const total = data.reduce((a,b)=> a + (b.menit||0), 0);
-    totalDurasi.textContent = total ? `Total latihan minggu ini: ${total} menit 💪` : '';
-    renderProgress(total);
-    renderChart(data);
-  }
-
-  // events
-  let unsub = null;
-
-  btn.onclick = async ()=>{
-
-    const u = auth.currentUser;
-    if(!u){ toast('🔒 Silakan login dulu untuk mengakses riwayat olahraga kamu.'); return; }
-    await ensureDoc(u.uid);
-    if(unsub) unsub();
-    unsub = subscribeItems(u.uid, renderList);
-    panel.style.display='flex';
-  };
-
-  tambahBtn.onclick = async ()=>{
-    const u = auth.currentUser;
-    if(!u) return toast('Login dulu ya.','🔒');
-    const nama  = (selectKegiatan.value||'').trim();
-    const menit = parseInt((inputDurasi.value||'').trim());
-    if(!nama || !menit) return toast('Pilih olahraga & isi durasi!', '⚠️');
-    await addItem(u.uid, nama, menit);
-    selectKegiatan.value=''; inputDurasi.value='';
-    toast('Data latihan ditambahkan!','✅');
-  };
-
-  rekapList.addEventListener('click', async (e)=>{
-    const idx = e.target.dataset.i;
-    if(idx===undefined) return;
-    const u = auth.currentUser; if(!u) return;
-    await removeItem(u.uid, Number(idx));
-    toast('Data dihapus.','🗑️');
-  });
-
-  closeBtn.onclick = ()=>{
-    panel.style.display='none';
-    if(unsub){ unsub(); unsub=null; }
-  };
-}
-
-/* ==========================
-   4) SUGGESTED FIRESTORE RULES
-   (set di Firebase Console → Firestore → Rules)
-   --------------------------
-   rules_version = '2';
-   service cloud.firestore {
-     match /databases/{database}/documents {
-       match /users/{uid}/rekapOlahraga/{docId} {
-         allow read, write: if request.auth != null && request.auth.uid == uid;
-       }
-     }
-   }
-   ========================== */
-</script>
-
-
-
-
-
-
-<script src="script.js"></script>
-
-
-
-
-
-
-</body> 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chat.js"></script>
+  <script src="effects.js"></script>
+  <script type="module" src="firebase.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
-  
